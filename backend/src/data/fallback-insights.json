@@ -1,0 +1,44 @@
+[
+  {
+    "id": "static-1",
+    "text": "Bitcoin's dominance continues to hold above 50% as institutional investors consolidate positions ahead of the next halving cycle. On-chain metrics show long-term holder supply at an all-time high, suggesting reduced selling pressure in the near term.",
+    "date": "2026-06-11",
+    "source": "static"
+  },
+  {
+    "id": "static-2",
+    "text": "Ethereum's fee burn mechanism has removed over 4 million ETH from circulation since the Merge, creating consistent deflationary pressure. Layer 2 adoption is accelerating, with aggregate transaction volumes now exceeding the Ethereum mainnet by 3x.",
+    "date": "2026-06-10",
+    "source": "static"
+  },
+  {
+    "id": "static-3",
+    "text": "DeFi protocol revenues hit a quarterly record this week, driven largely by lending and liquid staking activity. Analysts point to rising stablecoin yields as a catalyst pulling capital from traditional money markets into on-chain alternatives.",
+    "date": "2026-06-09",
+    "source": "static"
+  },
+  {
+    "id": "static-4",
+    "text": "Altcoin season indicators are flashing cautious signals — Bitcoin dominance rising while most mid-caps lag. Historically, this pattern precedes a brief consolidation before broader market expansion. Risk management remains critical in current conditions.",
+    "date": "2026-06-08",
+    "source": "static"
+  },
+  {
+    "id": "static-5",
+    "text": "NFT market volume has rebounded 40% month-over-month, led by gaming and utility-focused collections rather than pure speculative art. Projects with clear token utility and active communities are outperforming the broader market significantly.",
+    "date": "2026-06-07",
+    "source": "static"
+  },
+  {
+    "id": "static-6",
+    "text": "Regulatory clarity in the EU and UK is accelerating institutional adoption, with multiple traditional banks announcing crypto custody services. This structural inflow of capital is expected to dampen volatility over the medium term while establishing price floors.",
+    "date": "2026-06-06",
+    "source": "static"
+  },
+  {
+    "id": "static-7",
+    "text": "Cross-chain bridge volume surpassed $2B in the past 24 hours as traders arbitrage price differences across ecosystems. The multi-chain paradigm is maturing, but security audits remain paramount — bridge exploits have accounted for over $3B in losses historically.",
+    "date": "2026-06-05",
+    "source": "static"
+  }
+]

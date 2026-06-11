@@ -1,0 +1,58 @@
+[
+  {
+    "id": "static-1",
+    "title": "Bitcoin Surges Past $70,000 as Spot ETF Inflows Hit Weekly High",
+    "source": "CoinDesk",
+    "publishedAt": "2026-06-11T08:30:00Z",
+    "url": "https://www.coindesk.com"
+  },
+  {
+    "id": "static-2",
+    "title": "Ethereum Layer 2 Ecosystem Sees Record $12B Locked in Protocols",
+    "source": "The Block",
+    "publishedAt": "2026-06-11T07:15:00Z",
+    "url": "https://www.theblock.co"
+  },
+  {
+    "id": "static-3",
+    "title": "SEC Approves Third Bitcoin Spot ETF, Signaling Regulatory Shift",
+    "source": "CryptoSlate",
+    "publishedAt": "2026-06-10T18:45:00Z",
+    "url": "https://cryptoslate.com"
+  },
+  {
+    "id": "static-4",
+    "title": "Solana Breaks 1,000 TPS Milestone Amid DeFi Trading Surge",
+    "source": "Decrypt",
+    "publishedAt": "2026-06-10T14:20:00Z",
+    "url": "https://decrypt.co"
+  },
+  {
+    "id": "static-5",
+    "title": "DeFi Total Value Locked Climbs to $180B as Markets Rally",
+    "source": "DeFi Llama",
+    "publishedAt": "2026-06-10T11:00:00Z",
+    "url": "https://defillama.com"
+  },
+  {
+    "id": "static-6",
+    "title": "Binance Launches Zero-Fee Trading for 12 Major Crypto Pairs",
+    "source": "CoinTelegraph",
+    "publishedAt": "2026-06-09T22:10:00Z",
+    "url": "https://cointelegraph.com"
+  },
+  {
+    "id": "static-7",
+    "title": "Cardano Smart Contract Activity Reaches All-Time High",
+    "source": "Messari",
+    "publishedAt": "2026-06-09T16:30:00Z",
+    "url": "https://messari.io"
+  },
+  {
+    "id": "static-8",
+    "title": "Institutional Crypto Holdings Hit Record $320B in Q2 2026",
+    "source": "Bloomberg Crypto",
+    "publishedAt": "2026-06-09T09:00:00Z",
+    "url": "https://bloomberg.com/crypto"
+  }
+]

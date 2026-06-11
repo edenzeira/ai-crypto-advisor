@@ -1,0 +1,82 @@
+[
+  {
+    "id": "bitcoin",
+    "name": "Bitcoin",
+    "symbol": "BTC",
+    "price": 67430.21,
+    "change24h": 2.34,
+    "imageUrl": "https://assets.coingecko.com/coins/images/1/thumb/bitcoin.png"
+  },
+  {
+    "id": "ethereum",
+    "name": "Ethereum",
+    "symbol": "ETH",
+    "price": 3512.88,
+    "change24h": 1.87,
+    "imageUrl": "https://assets.coingecko.com/coins/images/279/thumb/ethereum.png"
+  },
+  {
+    "id": "solana",
+    "name": "Solana",
+    "symbol": "SOL",
+    "price": 178.43,
+    "change24h": -0.92,
+    "imageUrl": "https://assets.coingecko.com/coins/images/4128/thumb/solana.png"
+  },
+  {
+    "id": "binancecoin",
+    "name": "BNB",
+    "symbol": "BNB",
+    "price": 412.67,
+    "change24h": 0.55,
+    "imageUrl": "https://assets.coingecko.com/coins/images/825/thumb/bnb-icon2_2x.png"
+  },
+  {
+    "id": "ripple",
+    "name": "XRP",
+    "symbol": "XRP",
+    "price": 0.5923,
+    "change24h": -1.45,
+    "imageUrl": "https://assets.coingecko.com/coins/images/44/thumb/xrp-symbol-white-128.png"
+  },
+  {
+    "id": "dogecoin",
+    "name": "Dogecoin",
+    "symbol": "DOGE",
+    "price": 0.1342,
+    "change24h": 5.21,
+    "imageUrl": "https://assets.coingecko.com/coins/images/5/thumb/dogecoin.png"
+  },
+  {
+    "id": "cardano",
+    "name": "Cardano",
+    "symbol": "ADA",
+    "price": 0.4871,
+    "change24h": -0.33,
+    "imageUrl": "https://assets.coingecko.com/coins/images/975/thumb/cardano.png"
+  },
+  {
+    "id": "avalanche-2",
+    "name": "Avalanche",
+    "symbol": "AVAX",
+    "price": 38.92,
+    "change24h": 3.14,
+    "imageUrl": "https://assets.coingecko.com/coins/images/12559/thumb/Avalanche_Circle_RedWhite_Trans.png"
+  },
+  {
+    "id": "polkadot",
+    "name": "Polkadot",
+    "symbol": "DOT",
+    "price": 8.76,
+    "change24h": -2.07,
+    "imageUrl": "https://assets.coingecko.com/coins/images/12171/thumb/polkadot.png"
+  },
+  {
+    "id": "matic-network",
+    "name": "Polygon",
+    "symbol": "MATIC",
+    "price": 0.9234,
+    "change24h": 1.23,
+    "imageUrl": "https://assets.coingecko.com/coins/images/4713/thumb/matic-token-icon.png"
+  }
+]
