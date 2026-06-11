@@ -16,7 +16,13 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      window.dispatchEvent(new CustomEvent('auth:expired'))
+      const url = (error.config?.url as string) ?? ''
+      // Don't intercept 401s from the auth endpoints themselves (expected login failures)
+      if (!url.includes('/api/auth/')) {
+        localStorage.removeItem('token')
+        window.dispatchEvent(new CustomEvent('auth:expired'))
+        window.location.replace('/login?reason=expired')
+      }
     }
     return Promise.reject(error)
   }
