@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import FallbackBadge from '../shared/FallbackBadge'
 import Spinner from '../shared/Spinner'
 
