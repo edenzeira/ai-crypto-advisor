@@ -2,7 +2,28 @@
 
 A personalized full-stack crypto investor dashboard. Users register, complete a one-time onboarding, and receive a daily dashboard tailored to their preferences: preferred assets, investor type, and content interests.
 
-**Live demo**: [frontend on Vercel] · [backend on Render]
+## Live Demo
+
+- Frontend: https://ai-crypto-advisor-seven.vercel.app
+- Backend API: https://ai-crypto-advisor-9ti6.onrender.com
+
+## Demo Account
+
+Email: admin@gmail.com
+Password: Admin1234
+
+
+> Note: The backend is hosted on Render's free tier. The first request after inactivity may take up to 60 seconds while the service wakes up.
+
+---
+
+## Screenshots
+
+| Login | Dashboard |
+|-------|-----------|
+| ![Login page](docs/screenshots/login.png) | ![Dashboard](docs/screenshots/dashboard.png) |
+
+![Dashboard detail — AI Insight and Crypto Meme sections](docs/screenshots/dashboard-detail.png)
 
 ---
 
@@ -80,7 +101,7 @@ Open **http://localhost:5173** in your browser.
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `VITE_API_URL` | Yes | Backend base URL (`http://localhost:3001` locally) |
+| `VITE_API_URL` | Yes (default provided) | Backend base URL (`http://localhost:3001` locally) |
 
 ---
 
@@ -88,7 +109,7 @@ Open **http://localhost:5173** in your browser.
 
 ```
 ai-crypto-advisor/
-├── frontend/          → React 18 + TypeScript + Vite + Tailwind CSS
+├── frontend/          → React 19 + TypeScript + Vite + Tailwind CSS
 │                        Deployed to Vercel
 └── backend/           → Node.js + Express + TypeScript + SQLite
                          Deployed to Render
@@ -96,9 +117,32 @@ ai-crypto-advisor/
 
 The two apps are independent deployable units; no code is shared between them.
 
+### Tech Stack
+
+#### Frontend
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- React Router
+- Axios
+
+#### Backend
+- Node.js
+- Express
+- TypeScript
+- SQLite
+- JWT Authentication
+
+#### External APIs
+- CoinGecko
+- CryptoPanic
+- OpenRouter
+- Reddit
+
 ### Frontend
 
-- **React Router 6** for client-side routing with auth and onboarding guards
+- **React Router ** for client-side routing with auth and onboarding guards
 - **AuthContext** stores the JWT in `localStorage` and exposes `login` / `logout`
 - **DashboardPage** fetches all four sections in parallel on mount; each section is independently error-bounded
 - **useVotes** hook manages vote state with optimistic UI updates; reverts via server refetch on API error
@@ -168,7 +212,7 @@ Full request/response shapes: [`specs/001-ai-crypto-advisor/contracts/api.md`](s
 
 6. Deploy and confirm `GET /api/health` returns `{"status":"ok"}`.
 
-> **Render free tier** spins down after 15 minutes of inactivity. The first request after a cold start takes 30–60 seconds. The frontend shows loading spinners per section while waiting.
+> **Render free tier** spins down after 15 minutes of inactivity. The first request after a cold start may take up to 60 seconds. The frontend shows loading spinners per section while waiting.
 
 ### Frontend → Vercel
 
@@ -197,46 +241,7 @@ npm run start      # Run compiled dist/index.js
 npm run dev        # Vite dev server
 npm run build      # Production build → dist/
 npm run preview    # Preview production build locally
+npm run lint       # Run ESLint
 ```
 
 ---
-
-## AI Tool Usage
-
-Claude (claude-sonnet-4-6 via Claude Code) was used throughout development for:
-
-- **Scaffolding** — generating initial boilerplate for Express routes, React components, and TypeScript interfaces
-- **Service implementation** — CoinGecko, CryptoPanic, Reddit, and OpenRouter/HuggingFace service modules with fallback logic
-- **Personalization logic** — the news prioritization algorithm and per-profile AI insight caching strategy
-- **Voting feature** — backend upsert route and the optimistic-UI `useVotes` hook with rollback on error
-- **Debugging** — resolving TypeScript type errors and SQLite constraint issues
-
-All generated code was reviewed, tested manually, and adjusted where needed.
-
----
-
-## Bonus: Using Votes and Preferences to Train a Recommendation Model
-
-The combination of onboarding preferences and vote signals creates a compact but rich training dataset:
-
-**Available signals per user:**
-- `user_preferences.crypto_assets` — stated interest (explicit)
-- `user_preferences.investor_type` — self-reported trading style
-- `votes.direction` per `content_type` + `content_id` — implicit feedback on actual content
-
-**Feature engineering ideas:**
-- Represent each content item as a vector: asset keywords present, content type, source credibility score, recency
-- Label each vote as a positive (`up`) or negative (`down`) training example for that user
-- The `investor_type` can serve as a cluster label for cold-start recommendations (new users with no votes yet get the preferences of similar investor-type users)
-
-**Simple collaborative filtering approach:**
-1. Build a user–item matrix from the `votes` table (rows = users, columns = content IDs, values = +1 / -1 / 0)
-2. Train a matrix factorization model (e.g. SVD, ALS) to predict missing entries
-3. At serving time, rank candidate content items by predicted score for the authenticated user
-4. Blend with the explicit `crypto_assets` preference as a hard filter or re-ranking boost
-
-**Content-based fallback (cold start):**
-- Extract keywords from each news headline; score overlap with `crypto_assets`
-- Rank by overlap score — this is what the current implementation already does as a heuristic
-
-As vote volume grows, the collaborative signal will outperform the heuristic, making the switch to a learned model a natural upgrade path.
