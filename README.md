@@ -7,11 +7,6 @@ A personalized full-stack crypto investor dashboard. Users register, complete a 
 - Frontend: https://ai-crypto-advisor-seven.vercel.app
 - Backend API: https://ai-crypto-advisor-9ti6.onrender.com
 
-## Demo Account
-
-Email: admin@gmail.com
-Password: Admin1234
-
 
 > Note: The backend is hosted on Render's free tier. The first request after inactivity may take up to 60 seconds while the service wakes up.
 
