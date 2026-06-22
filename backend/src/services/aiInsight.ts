@@ -60,7 +60,11 @@ async function tryOpenRouter(prompt: string): Promise<string | null> {
       }),
       signal: AbortSignal.timeout(15000),
     })
-    if (!res.ok) return null
+    if (!res.ok) {
+      const errorText = await res.text()
+      console.error('OpenRouter error:', res.status, errorText)
+      return null
+    }
     const json = (await res.json()) as { choices: [{ message: { content: string } }] }
     return json.choices[0]?.message?.content?.trim() ?? null
   } catch {
