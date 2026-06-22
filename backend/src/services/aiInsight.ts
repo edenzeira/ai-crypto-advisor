@@ -68,6 +68,7 @@ async function tryOpenRouter(prompt: string): Promise<string | null> {
       return null
     }
     const json = (await res.json()) as { choices: [{ message: { content: string } }] }
+    console.log('OpenRouter response:', JSON.stringify(json).slice(0, 500))
     return json.choices[0]?.message?.content?.trim() ?? null
   } catch {
     return null
