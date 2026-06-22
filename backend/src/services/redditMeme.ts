@@ -7,7 +7,11 @@ export async function getMeme(): Promise<{ data: DashboardMeme; isFallback: bool
       headers: { 'User-Agent': 'crypto-advisor-app/1.0 (assignment)' },
       signal: AbortSignal.timeout(5000),
     })
-    if (!res.ok) throw new Error(`Reddit responded with ${res.status}`)
+    if (!res.ok) {
+      const errorText = await res.text()
+      console.error('Reddit error:', res.status, errorText)
+      throw new Error(`Reddit responded with ${res.status}`)
+    }
 
     const json = (await res.json()) as {
       data: { children: Array<{ data: { id: string; title: string; url: string; permalink: string; post_hint?: string } }> }
@@ -33,8 +37,9 @@ export async function getMeme(): Promise<{ data: DashboardMeme; isFallback: bool
       },
       isFallback: false,
     }
-  } catch {
-    const random = fallbackMemes[Math.floor(Math.random() * fallbackMemes.length)]
-    return { data: random, isFallback: true }
-  }
+  }catch (error) {
+      console.error('Reddit request failed:', error)
+      const random = fallbackMemes[Math.floor(Math.random() * fallbackMemes.length)]
+      return { data: random, isFallback: true }
+    }
 }
