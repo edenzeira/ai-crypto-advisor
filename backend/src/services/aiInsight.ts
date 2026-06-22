@@ -56,7 +56,7 @@ async function tryOpenRouter(prompt: string): Promise<string | null> {
         'X-Title': 'Crypto Advisor',
       },
       body: JSON.stringify({
-        model: 'mistralai/mistral-7b-instruct',
+        model: 'openai/gpt-oss-20b',
         messages: [{ role: 'user', content: prompt }],
         max_tokens: 250,
       }),
