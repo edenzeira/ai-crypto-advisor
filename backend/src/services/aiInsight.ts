@@ -43,6 +43,8 @@ function buildFallback(prefs: UserPrefs): string {
 
 async function tryOpenRouter(prompt: string): Promise<string | null> {
   const apiKey = process.env.OPENROUTER_API_KEY
+  console.log('tryOpenRouter called')
+  console.log('OPENROUTER_API_KEY exists:', !!apiKey)
   if (!apiKey) return null
   try {
     const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
@@ -97,6 +99,7 @@ async function tryHuggingFace(prompt: string): Promise<string | null> {
 export async function getDailyInsight(
   prefs: UserPrefs,
 ): Promise<{ data: DashboardInsight; isFallback: boolean }> {
+  console.log('getDailyInsight called', prefs)
   const today = new Date().toISOString().slice(0, 10)
   // Cache key stored in the `date` column — unique per profile per day
   const cacheKey = buildCacheKey(today, prefs)
